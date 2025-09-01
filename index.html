@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máquina de Venda Automática - Autômato Finito</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Inclua D3.js para a visualização do grafo -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Simulação de Máquina de Venda Automática (Autômato Finito)</h1>
+        <p>Modelagem baseada no Artigo "Modelagem de uma Vending Machine utilizando um Autômato Finito com Saída"</p>
+    </header>
+
+    <main>
+        <div class="controls">
+            <h2>Status da Máquina:</h2>
+            <p>Estado Atual: <span id="current-state">0c</span></p>
+            <p>Dinheiro Inserido: <span id="current-balance">0.00</span> R\$</p>
+            <p>Última Saída/Mensagem: <span id="last-output">N/A</span></p>
+
+            <h2>Inserir Moedas:</h2>
+            <div class="buttons-group">
+                <button data-input="5">5c</button>
+                <button data-input="10">10c</button>
+                <button data-input="25">25c</button>
+                <button data-input="50">50c</button>
+            </div>
+
+            <h2>Selecionar Produto:</h2>
+            <div class="buttons-group">
+                <button data-input="a">Categoria A (R\$ 0,25)</button>
+                <button data-input="b">Categoria B (R\$ 0,50)</button>
+            </div>
+
+            <h2>Finalizar Seleção (após escolher Categoria A ou B):</h2>
+            <div class="buttons-group">
+                <button data-input="p">Produto P</button>
+                <button data-input="q">Produto Q</button>
+            </div>
+
+            <h2>Ações de Reembolso/Reinício:</h2>
+            <div class="buttons-group">
+                <button data-input="p" class="refund-button">Reembolsar (P)</button>
+                <button data-input="q" class="refund-button">Reembolsar (Q)</button>
+                <button id="reset-machine">Reiniciar Máquina</button>
+            </div>
+        </div>
+
+        <div class="visualization">
+            <h2 class="visualization-title">Diagrama do Autômato:</h2>
+            <div id="fsm-graph">
+                <!-- O gráfico do autômato será renderizado aqui pelo D3.js -->
+            </div>
+            <p class="visualization-legend">Legenda: <span class="current-legend">Estado Atual</span>, <span class="final-legend">Estado Final</span>, <span class="active-transition-legend">Transição Ativa</span></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Simulação de Máquina de Venda Automática - Desenvolvido com base em Autômatos Finitos.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
