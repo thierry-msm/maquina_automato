@@ -39,11 +39,3 @@ Este projeto é uma simulação interativa de uma máquina de venda automática 
 
 ## Sobre o modelo
 A modelagem segue o artigo "Modelagem de uma Vending Machine utilizando um Autômato Finito com Saída". O autômato foi implementado conforme o diagrama do artigo, com todos os estados, transições e saídas representados.
-
-## Créditos
-- Desenvolvido por [Seu Nome]
-- Baseado em conceitos de Autômatos Finitos e D3.js
-
----
-
-**Dúvidas ou sugestões?** Abra uma issue ou entre em contato!
